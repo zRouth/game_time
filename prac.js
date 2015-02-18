@@ -36,11 +36,19 @@ var parseGrid = function(grid, direction) {
   var new_grid = [];
   var temp = [];
 
-  if (direction === "right" || direction === "left") {
-    for(var i=0; i < grid.length; i++) {
+  if (direction === "left") {
+    for (var i=0; i < grid.length; i++) {
       temp = singleArray(grid[i])
       while (temp.length < 5) {
         temp.push(null);
+      }
+      new_grid.push(temp);
+    }
+  } else if (direction === "right") {
+    for (var i=0; i < grid.length; i++) {
+      temp = singleArray(grid[i]).reverse();
+      while (temp.length < 5) {
+        temp.unshift(null);
       }
       new_grid.push(temp);
     }
