@@ -1,7 +1,4 @@
-var arr = [null,256,null,256];
-
-console.log("Original Arr");
-console.log(arr);
+var arr = [8,16,8,8];
 
 var new_arr = [];
 
@@ -10,9 +7,6 @@ for(var i=0; i < arr.length; i++) {
     new_arr.push(arr[i])
   }
 };
-
-console.log("New Arr")
-console.log(new_arr)
 
 var previous_value = 0;
 
@@ -38,6 +32,4 @@ for(var i=0; i < new_arr.length; i++) {
   bool_switch = false;
 };
 
-
-console.log("Newer Arr")
 console.log(newer_arr);
