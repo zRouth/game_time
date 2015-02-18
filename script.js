@@ -33,23 +33,50 @@ function placeNewNumber () {
 };
 
 
+var arr = [16,2,2,2];
+var new_arr = [];
+
+for(var i=0; i < arr.length; i++) {
+  if (arr[i] !== null) {
+    new_arr.push(arr[i])
+  }
+};
+
+console.log("New Arr")
+console.log(new_arr)
+
+var previous_value = null;
+
+var newer_arr = [];
+
+for(var i=0; i < new_arr.length; i++) {
+  if (new_arr[i] === previous_value) {
+    newer_arr.push(arr[i] * 2);
+    previous_value = null;
+  };
+  previous_value = new_arr[i];
+};
+
+console.log("Newer Arr")
+console.log(newer_arr);
 
 
 
 
-var gameBoard = [
-        [0,0,0,0],
-        [0,0,0,0],
-        [0,0,0,0],
-        [0,0,0,0],
-        ];
+
+// var gameBoard = [
+//         [0,0,0,0],
+//         [0,0,0,0],
+//         [0,0,0,0],
+//         [0,0,0,0],
+//         ];
 
 
-for (var i = 0; i < gameBoard.length; i++) {
-  gameBoard[i];
-}
+// for (var i = 0; i < gameBoard.length; i++) {
+//   gameBoard[i];
+// }
 
-});
+// });
 
 
 // gameBoard.forEach(function(row) {
