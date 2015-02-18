@@ -70,11 +70,3 @@ var gameGrid = [
 ];
 
 console.log(parseGrid(gameGrid, "right"));
-
-// for(var i=0; i < grid.length; i++) {
-//   for(var j=0; j < grid[i].length; j++) {
-//
-//     console.log(grid[i][j]);
-//
-//   }
-// }
