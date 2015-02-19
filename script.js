@@ -7,6 +7,24 @@ Array.prototype.chunk = function(chunkSize) {
   );
 }
 
+var checkIfFull = function(grid) {
+
+  var arr = _.flatten(grid);
+  var new_arr = [];
+
+  for(var i=0; i < arr.length; i++) {
+    if (arr[i] !== null) {
+        new_arr.push(arr[i])
+      }
+    }
+
+  if (new_arr.length === 16) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 var reverseGrid = function(grid) {
   var temp_grid = [];
   var temp_arr = [];
@@ -124,10 +142,9 @@ Game.prototype.fillRandomSquare = function() {
   var squares = _.flatten(this.board);
   var index = Math.floor((Math.random() * squares.length));
   while(squares[index] !== null) {
-    // we already have a value in that square, need to generate another
     index = Math.floor((Math.random() * squares.length));
   }
-  squares[index] = Math.random() < 0.9 ? 2 : 4;;
+  squares[index] = Math.random() < 0.9 ? 2 : 4;
   this.board = squares.chunk(4);
 }
 
@@ -140,7 +157,9 @@ $(document).ready(function() {
   var handleDirection = function(dir) {
     $('.board').empty();
     game.board = parseGrid(game.board, dir);
-    game.fillRandomSquare();
+    if (checkIfFull(game.board)) {
+      game.fillRandomSquare();
+    }
     $('.board').append(render(game.board));
   }
 
