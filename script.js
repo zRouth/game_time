@@ -107,7 +107,7 @@ function render(board) {
     board.forEach(function (row) {
     var $row = $board.append('<div class="row"></div>');
     row.forEach(function (cell) {
-      $row.append('<div class="cell">' + cell + '</div>');
+      $row.append('<div class="cell ' + cell + '">' + cell + '</div>');
     });
   });
 
@@ -123,9 +123,17 @@ function Game() {
   ];
 }
 
-board = [
-  //board stuff here
-]
+Game.prototype.fillRandomSquare = function() {
+  var squares = _.flatten(this.board);
+  var index = Math.floor((Math.random() * squares.length));
+  while(squares[index] !== null) {
+    // we already have a value in that square, need to generate another
+    index = Math.floor((Math.random() * squares.length));
+  }
+  squares[index] = 2;
+  this.board = squares.chunk(4);
+}
+
 
 $(document).ready(function() {
 
@@ -137,18 +145,29 @@ var game = new Game();
 
 $('.board').append(render(game.board));
 
+var handleDirection = function(dir) {
+  $('.board').empty();
+  game.board = parseGrid(game.board, dir);
+  game.fillRandomSquare();
+  $('.board').append(render(game.board));
+}
 
 Mousetrap.bind("up", function() {
-  $('.board').empty();
-  console.log('whatever')
-  $('.board').append(render(parseGrid(game.board, 'up')));
-
+  handleDirection("up");
 });
-// Mousetrap.bind("down",  function() { parseGrid(grid, 'down') });
-// Mousetrap.bind("left",  function() { parseGrid(grid, 'left') });
-// Mousetrap.bind("right", function() { parseGrid(grid, 'right') });
 
 
-// append the new board to .body
-// $('.body').append(render(updatedBoard));
+Mousetrap.bind("down", function() {
+  handleDirection("down");
+});
+
+
+Mousetrap.bind("left", function() {
+  handleDirection("left");
+});
+
+
+Mousetrap.bind("right", function() {
+  handleDirection("right");
+});
 });
