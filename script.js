@@ -54,7 +54,6 @@ var singleArray = function(arr) {
   return newer_arr;
 };
 
-
 var parseGrid = function(grid, direction) {
   var new_grid = [];
   var temp = [];
@@ -99,7 +98,6 @@ var parseGrid = function(grid, direction) {
   }
     return new_grid;
 };
-
 
 function render(board) {
   var $board = $('<div class="board"></div>');
@@ -152,16 +150,13 @@ $(document).ready(function() {
     handleDirection("up");
   });
 
-
   Mousetrap.bind("down", function() {
     handleDirection("down");
   });
 
-
   Mousetrap.bind("left", function() {
     handleDirection("left");
   });
-
 
   Mousetrap.bind("right", function() {
     handleDirection("right");
