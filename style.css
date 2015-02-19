@@ -54,12 +54,12 @@ td {
   border-width: 5px;
 }
 
-.2 {
+[class="2"] {
   background: blue;
   color: blue;
 }
 
-.4 {
+[class="4"] {
   background: black;
   color: blue;
 }
