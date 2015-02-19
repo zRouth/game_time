@@ -1,3 +1,26 @@
+Array.prototype.chunk = function(chunkSize) {
+  var array=this;
+  return [].concat.apply([],
+    array.map(function(elem,i) {
+      return i%chunkSize ? [] : [array.slice(i,i+chunkSize)];
+    })
+  );
+}
+
+var reverseGrid = function(grid) {
+  var temp_grid = [];
+  var temp_arr = [];
+
+  for(var i=0; i < grid.length; i++) {
+    for(var j=0; j < grid[i].length; j++) {
+      temp_arr.push(grid[j][i]);
+    }
+  }
+
+  var reversed = temp_arr.chunk(4);
+  return reversed;
+};
+
 var singleArray = function(arr) {
   var new_arr = [];
 
@@ -35,11 +58,12 @@ var singleArray = function(arr) {
 var parseGrid = function(grid, direction) {
   var new_grid = [];
   var temp = [];
+  var temp_grid = [];
 
   if (direction === "left") {
     for (var i=0; i < grid.length; i++) {
       temp = singleArray(grid[i])
-      while (temp.length < 5) {
+      while (temp.length < 4) {
         temp.push(null);
       }
       new_grid.push(temp);
@@ -47,34 +71,43 @@ var parseGrid = function(grid, direction) {
   } else if (direction === "right") {
     for (var i=0; i < grid.length; i++) {
       temp = singleArray(grid[i]).reverse();
-      while (temp.length < 5) {
+      while (temp.length < 4) {
         temp.unshift(null);
       }
       new_grid.push(temp);
     }
+  } else if (direction === "up") {
+    var temp_grid = reverseGrid(grid);
+    for (var i=0; i < temp_grid.length; i++) {
+      temp = singleArray(temp_grid[i]);
+      while (temp.length < 4) {
+        temp.push(null);
+      }
+      new_grid.push(temp);
+    }
+    new_grid = reverseGrid(new_grid);
+  } else if (direction === "down") {
+    var temp_grid = reverseGrid(grid);
+    for (var i=0; i < temp_grid.length; i++) {
+      temp = singleArray(temp_grid[i]);
+      while (temp.length < 4) {
+        temp.unshift(null);
+      }
+      new_grid.push(temp);
+    }
+    new_grid = reverseGrid(new_grid);
   }
     return new_grid;
-
-
 };
-
-// console.log(singleArray([8,16,16,8]));
-
 
 
 var gameGrid = [
-  [8,16,16,8],
+  [4,16,16,8],
+  [4,4,4,8],
   [4,4,4,null],
-  [8,8,8,null],
-  [16,null,16,null]
+  [4,null,null,16]
 ];
 
-console.log(parseGrid(gameGrid, "right"));
-
-// for(var i=0; i < grid.length; i++) {
-//   for(var j=0; j < grid[i].length; j++) {
-//
-//     console.log(grid[i][j]);
-//
-//   }
-// }
+// console.log(reverseGrid(gameGrid));
+console.log(parseGrid(gameGrid, "down"));
+// parseGrid(gameGrid, "up")
