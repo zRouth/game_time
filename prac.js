@@ -102,10 +102,10 @@ var parseGrid = function(grid, direction) {
 
 
 var gameGrid = [
-  [4,16,16,8],
-  [16,4,4,8],
-  [4,4,4,null],
-  [4,4,null,16]
+  [4096,16,16,null],
+  [2048,16,256,8],
+  [4,512,4,null],
+  [4,512,null,16]
 ];
 
 console.log(parseGrid(gameGrid, "down"));
