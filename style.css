@@ -25,7 +25,8 @@ td {
   margin-right: 15px;
   float: left;
   border-radius: 3px;
-  background: green; }
+  background: green;
+  }
 
 .grid-cell:last-child {
   margin-right: 0; }
@@ -37,4 +38,16 @@ td {
 .cell {
   display: inline-block;
   padding: 20px;
+  width: 106.25px;
+  height: 106.25px;
+  border-radius: 3px;
+  background: green;
+  border: 1px solid black;
+  font-size: 30px;
+  margin: auto;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  font-weight: bold;
 }
