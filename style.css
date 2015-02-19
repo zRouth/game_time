@@ -1,5 +1,24 @@
 .board {
-  margin-left: 14.5%;
+
+}
+
+.heading {
+  width: 100%;
+  text-align: center;
+}
+
+.outer-div {
+  display: table;
+  margin: 0 auto;
+}
+
+.title {
+  width: 100%;
+  margin: auto;
+}
+
+.reset-game {
+
 }
 
 .grid-container {

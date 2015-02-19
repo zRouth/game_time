@@ -131,12 +131,11 @@ Game.prototype.fillRandomSquare = function() {
   this.board = squares.chunk(4);
 }
 
-
 $(document).ready(function() {
 
   var game = new Game();
 
-  $('.board').append(render(game.board));
+  $('.board').html(render(game.board));
 
   var handleDirection = function(dir) {
     $('.board').empty();
@@ -159,5 +158,10 @@ $(document).ready(function() {
 
   Mousetrap.bind("right", function() {
     handleDirection("right");
+  });
+
+  $( ".reset-game" ).click(function() {
+    game = new Game();
+    $('.board').html(render(game.board));
   });
 });
