@@ -160,7 +160,7 @@ $(document).ready(function() {
     handleDirection("right");
   });
 
-  $( ".reset-game" ).click(function() {
+  $(".reset-game" ).click(function() {
     game = new Game();
     $('.board').html(render(game.board));
   });
