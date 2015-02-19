@@ -102,13 +102,12 @@ var parseGrid = function(grid, direction) {
 function render(board) {
   var $board = $('<div class="board"></div>');
 
-    board.forEach(function (row) {
+  board.forEach(function (row) {
     var $row = $board.append('<div class="row"></div>');
     row.forEach(function (cell) {
       $row.append('<div class="cell hi' + cell + '">' + cell + '</div>');
     });
   });
-
   return $board;
 };
 
