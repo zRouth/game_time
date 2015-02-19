@@ -107,7 +107,7 @@ function render(board) {
     board.forEach(function (row) {
     var $row = $board.append('<div class="row"></div>');
     row.forEach(function (cell) {
-      $row.append('<div class="cell ' + cell + '">' + cell + '</div>');
+      $row.append('<div class="cell hi' + cell + '">' + cell + '</div>');
     });
   });
 
