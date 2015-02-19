@@ -43,7 +43,7 @@ td {
   border-radius: 3px;
   background: grey;
   border: 1px solid black;
-  font-size: 30px;
+  font-size: 60px;
   margin: auto;
   color: white;
   text-align: center;
@@ -82,4 +82,10 @@ td {
 
 .256 {
   background: #00FFFF;
+}
+
+.null {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
