@@ -33,3 +33,8 @@ td {
 .turn-black {
   background: black;
 }
+
+.cell {
+  display: inline-block;
+  padding: 20px;
+}
