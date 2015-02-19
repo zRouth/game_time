@@ -127,7 +127,7 @@ Game.prototype.fillRandomSquare = function() {
     // we already have a value in that square, need to generate another
     index = Math.floor((Math.random() * squares.length));
   }
-  squares[index] = 2;
+  squares[index] = Math.random() < 0.9 ? 2 : 4;;
   this.board = squares.chunk(4);
 }
 
