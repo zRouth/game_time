@@ -108,6 +108,4 @@ var gameGrid = [
   [4,null,null,16]
 ];
 
-// console.log(reverseGrid(gameGrid));
 console.log(parseGrid(gameGrid, "down"));
-// parseGrid(gameGrid, "up")
