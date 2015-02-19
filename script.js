@@ -101,53 +101,10 @@ var parseGrid = function(grid, direction) {
 };
 
 
-var gameGrid = [
-  [4096,16,16,null],
-  [2048,16,256,8],
-  [4,512,4,null],
-  [4,512,null,16]
-];
-
-console.log(parseGrid(gameGrid, "down"));
-
-
-$(document).ready(function() {
-
-var gameGrid = [
-  [8,16,16,8],
-  [4,4,4,null],
-  [8,8,8,null],
-  [16,null,16,null]
-];
-
-// function renderBoard(board) {
-//   var $board = $('<div class="board"></div>');
-
-//   board.forEach(function (row) {
-//     var $row = $board.append('<div class="row"></div>');
-//     row.forEach(function (cell) {
-//       $row.append('<div class="cell">' + cell + '</div>');
-//     });
-//   });
-
-//   return $board;
-// }
-
-// var myNewBoard = renderBoard(gameGrid);
-
-function Game() {
-  this.board = [
-      [8,16,16,8],
-      [4,4,4,null],
-      [8,8,8,null],
-      [16,null,16,null]
-  ];
-}
-
-Game.prototype.render = function () {
+function render(board) {
   var $board = $('<div class="board"></div>');
 
-  this.board.forEach(function (row) {
+    board.forEach(function (row) {
     var $row = $board.append('<div class="row"></div>');
     row.forEach(function (cell) {
       $row.append('<div class="cell">' + cell + '</div>');
@@ -157,17 +114,41 @@ Game.prototype.render = function () {
   return $board;
 };
 
+function Game() {
+  this.board = [
+    [null,null,null,null],
+    [2,null,null,null],
+    [null,null,2,null],
+    [null,null,null,null]
+  ];
+}
+
+board = [
+  //board stuff here
+]
+
+$(document).ready(function() {
+
+// render the initial board
+// when user presses a key, somehow update the board
+// re-render the board
+
 var game = new Game();
-var game2 = new Game();
+
+$('.board').append(render(game.board));
 
 
+Mousetrap.bind("up", function() {
+  $('.board').empty();
+  console.log('whatever')
+  $('.board').append(render(parseGrid(game.board, 'up')));
 
-$('body').append(game.render());
+});
+// Mousetrap.bind("down",  function() { parseGrid(grid, 'down') });
+// Mousetrap.bind("left",  function() { parseGrid(grid, 'left') });
+// Mousetrap.bind("right", function() { parseGrid(grid, 'right') });
 
 
-  Mousetrap.bind("up",    function() { parseGrid(); console.log('whatever') });
-  Mousetrap.bind("down",  function() { parseGrid(); });
-  Mousetrap.bind("left",  function() { parseGrid(); });
-  Mousetrap.bind("right", function() { parseGrid(); });
-
+// append the new board to .body
+// $('.body').append(render(updatedBoard));
 });
