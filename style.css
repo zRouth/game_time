@@ -52,43 +52,40 @@
   border-width: 5px;
 }
 
-.2 {
+.hi2 {
   background: blue;
-  color: blue;
 }
 
-.4 {
+.hi4 {
   background: black;
-  color: blue;
 }
 
-.8 {
+.hi8 {
   background: yellow;
-  color: blue;
+  color: black;
 }
 
-.16 {
+.hi16 {
   background: purple;
-  color: blue;
 }
 
-.32 {
+.hi32 {
   background: brown;
 }
 
-.64 {
+.hi64 {
   background: pink;
 }
 
-.128 {
+.hi128 {
   background: orange;
 }
 
-.256 {
+.hi256 {
   background: #00FFFF;
 }
 
-.null {
+.hinull {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
