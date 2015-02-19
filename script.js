@@ -114,8 +114,8 @@ function render(board) {
 function Game() {
   this.board = [
     [null,null,null,null],
-    [2,null,null,null],
-    [null,null,2,null],
+    [null,null,null,null],
+    [null,null,null,null],
     [null,null,null,null]
   ];
 }
