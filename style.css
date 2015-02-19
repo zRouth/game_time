@@ -74,15 +74,33 @@
 }
 
 .hi64 {
-  background: pink;
+  background-image: url('images/steve.png');
+  background-size: 100%;
 }
 
 .hi128 {
-  background: orange;
+ background-image: url('images/jeff.jpeg');
+ background-size: 100%;
 }
 
 .hi256 {
-  background: #00FFFF;
+  background-image: url('images/jorge.png');
+ background-size: 100%;
+}
+
+.hi512 {
+  background-image: url('images/josh.png');
+ background-size: 100%;
+}
+
+.hi1024 {
+  background-image: url('images/rachel.png');
+ background-size: 100%;
+}
+
+.hi2048 {
+  background-image: url('images/horace.png');
+ background-size: 100%;
 }
 
 .hinull {
