@@ -74,6 +74,7 @@
 }
 
 .hi64 {
+
   background-image: url('images/steve.png');
   background-size: 100%;
 }
@@ -85,7 +86,7 @@
 
 .hi256 {
   background-image: url('images/jorge.png');
- background-size: 100%;
+  background-size: 100%;
 }
 
 .hi512 {
@@ -100,7 +101,7 @@
 
 .hi2048 {
   background-image: url('images/horace.png');
- background-size: 100%;
+  background-size: 100%;
 }
 
 .hinull {

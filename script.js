@@ -54,7 +54,6 @@ var singleArray = function(arr) {
   return newer_arr;
 };
 
-
 var parseGrid = function(grid, direction) {
   var new_grid = [];
   var temp = [];
@@ -100,17 +99,15 @@ var parseGrid = function(grid, direction) {
     return new_grid;
 };
 
-
 function render(board) {
   var $board = $('<div class="board"></div>');
 
-    board.forEach(function (row) {
+  board.forEach(function (row) {
     var $row = $board.append('<div class="row"></div>');
     row.forEach(function (cell) {
       $row.append('<div class="cell hi' + cell + '">' + cell + '</div>');
     });
   });
-
   return $board;
 };
 
@@ -137,37 +134,30 @@ Game.prototype.fillRandomSquare = function() {
 
 $(document).ready(function() {
 
-// render the initial board
-// when user presses a key, somehow update the board
-// re-render the board
+  var game = new Game();
 
-var game = new Game();
-
-$('.board').append(render(game.board));
-
-var handleDirection = function(dir) {
-  $('.board').empty();
-  game.board = parseGrid(game.board, dir);
-  game.fillRandomSquare();
   $('.board').append(render(game.board));
-}
 
-Mousetrap.bind("up", function() {
-  handleDirection("up");
-});
+  var handleDirection = function(dir) {
+    $('.board').empty();
+    game.board = parseGrid(game.board, dir);
+    game.fillRandomSquare();
+    $('.board').append(render(game.board));
+  }
 
+  Mousetrap.bind("up", function() {
+    handleDirection("up");
+  });
 
-Mousetrap.bind("down", function() {
-  handleDirection("down");
-});
+  Mousetrap.bind("down", function() {
+    handleDirection("down");
+  });
 
+  Mousetrap.bind("left", function() {
+    handleDirection("left");
+  });
 
-Mousetrap.bind("left", function() {
-  handleDirection("left");
-});
-
-
-Mousetrap.bind("right", function() {
-  handleDirection("right");
-});
+  Mousetrap.bind("right", function() {
+    handleDirection("right");
+  });
 });
