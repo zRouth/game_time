@@ -29,7 +29,8 @@ td {
   }
 
 .grid-cell:last-child {
-  margin-right: 0; }
+  margin-right: 0;
+}
 
 .turn-black {
   background: black;
@@ -50,22 +51,27 @@ td {
   vertical-align: middle;
   display: table-cell;
   font-weight: bold;
+  border-width: 5px;
 }
 
 .2 {
   background: blue;
+  color: blue;
 }
 
 .4 {
   background: black;
+  color: blue;
 }
 
 .8 {
   background: yellow;
+  color: blue;
 }
 
 .16 {
   background: purple;
+  color: blue;
 }
 
 .32 {
