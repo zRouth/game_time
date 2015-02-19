@@ -41,7 +41,7 @@ td {
   width: 106.25px;
   height: 106.25px;
   border-radius: 3px;
-  background: green;
+  background: grey;
   border: 1px solid black;
   font-size: 30px;
   margin: auto;
@@ -50,4 +50,36 @@ td {
   vertical-align: middle;
   display: table-cell;
   font-weight: bold;
+}
+
+.2 {
+  background: blue;
+}
+
+.4 {
+  background: black;
+}
+
+.8 {
+  background: yellow;
+}
+
+.16 {
+  background: purple;
+}
+
+.32 {
+  background: brown;
+}
+
+.64 {
+  background: pink;
+}
+
+.128 {
+  background: orange;
+}
+
+.256 {
+  background: #00FFFF;
 }

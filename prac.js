@@ -70,7 +70,8 @@ var parseGrid = function(grid, direction) {
     }
   } else if (direction === "right") {
     for (var i=0; i < grid.length; i++) {
-      temp = singleArray(grid[i]).reverse();
+      temp = singleArray(grid[i].reverse()).reverse();
+      console.log(temp);
       while (temp.length < 4) {
         temp.unshift(null);
       }
@@ -104,9 +105,9 @@ var parseGrid = function(grid, direction) {
 
 var gameGrid = [
   [8,16,16,8],
-  [4,4,4,null],
-  [8,8,8,null],
-  [16,null,16,null]
+  [4,4,4,16],
+  [8,8,8,32],
+  [16,4,4,4]
 ];
 
 console.log(parseGrid(gameGrid, "right"));

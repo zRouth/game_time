@@ -70,7 +70,7 @@ var parseGrid = function(grid, direction) {
     }
   } else if (direction === "right") {
     for (var i=0; i < grid.length; i++) {
-      temp = singleArray(grid[i]).reverse();
+      temp = singleArray(grid[i].reverse()).reverse();
       while (temp.length < 4) {
         temp.unshift(null);
       }
