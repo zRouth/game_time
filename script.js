@@ -137,37 +137,33 @@ Game.prototype.fillRandomSquare = function() {
 
 $(document).ready(function() {
 
-// render the initial board
-// when user presses a key, somehow update the board
-// re-render the board
+  var game = new Game();
 
-var game = new Game();
-
-$('.board').append(render(game.board));
-
-var handleDirection = function(dir) {
-  $('.board').empty();
-  game.board = parseGrid(game.board, dir);
-  game.fillRandomSquare();
   $('.board').append(render(game.board));
-}
 
-Mousetrap.bind("up", function() {
-  handleDirection("up");
-});
+  var handleDirection = function(dir) {
+    $('.board').empty();
+    game.board = parseGrid(game.board, dir);
+    game.fillRandomSquare();
+    $('.board').append(render(game.board));
+  }
 
-
-Mousetrap.bind("down", function() {
-  handleDirection("down");
-});
-
-
-Mousetrap.bind("left", function() {
-  handleDirection("left");
-});
+  Mousetrap.bind("up", function() {
+    handleDirection("up");
+  });
 
 
-Mousetrap.bind("right", function() {
-  handleDirection("right");
-});
+  Mousetrap.bind("down", function() {
+    handleDirection("down");
+  });
+
+
+  Mousetrap.bind("left", function() {
+    handleDirection("left");
+  });
+
+
+  Mousetrap.bind("right", function() {
+    handleDirection("right");
+  });
 });
