@@ -7,6 +7,21 @@ Array.prototype.chunk = function(chunkSize) {
   );
 }
 
+// var checkIfLose = function(scores) {
+//   for (var i = 0; i < scores.length; i++) {
+//
+//     if (scores[i + 1] === scores[i] && i%4 !== 3)
+//       return false;
+//     if (scores[i - 1] === scores[i] && i%4 !== 0)
+//       return false;
+//     if (scores[i + 4] === scores[i] && i <= 11)
+//       return false;
+//     if (scores[i + 4] === scores[i] && i >= 4)
+//       return false;
+//     }
+//   return true;
+// }
+
 var checkIfFull = function(grid) {
 
   var arr = _.flatten(grid);
@@ -161,6 +176,9 @@ $(document).ready(function() {
       game.fillRandomSquare();
     }
     $('.board').append(render(game.board));
+    // if (checkIfLose(_.flatten(game.board)) && checkIfFull(game.board)) {
+    //   alert("You Lost!");
+    // }
   }
 
   Mousetrap.bind("up", function() {
